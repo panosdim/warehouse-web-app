@@ -1,28 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import firebase from './firebase'
+import SignIn from './signIn'
+import Warehouse from "./warehouse";
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    // The component's Local state.
+    state = {
+        isSignedIn: false // Local signed-in state.
+    };
+
+    // Listen to the Firebase Auth state and set the local state.
+    componentDidMount() {
+        this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
+            (user) => this.setState({isSignedIn: !!user})
+        );
+    }
+
+    // Make sure we un-register Firebase observers when the component unmounts.
+    componentWillUnmount() {
+        this.unregisterAuthObserver();
+    }
+
+    render() {
+        if (this.state.isSignedIn) {
+            return (
+                <Warehouse/>
+            );
+        }
+        return (
+            <SignIn/>
+        );
+    }
 }
 
 export default App;
