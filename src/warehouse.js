@@ -8,16 +8,9 @@ const {Header, Content} = Layout;
 
 
 class Warehouse extends React.Component {
-    constructor(props) {
-        super(props);
-
-        // This binding is necessary to make `this` work in the callback
-        this.signOut = this.signOut.bind(this);
-    }
-
-    signOut() {
+    signOut = () => {
         auth.signOut()
-    }
+    };
 
     render() {
         return (

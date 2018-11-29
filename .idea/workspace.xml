@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ce4a95-76f2-4ce0-870b-d6cd56e7cd61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/xigpadi.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/items.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/signIn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/signIn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/warehouse.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/items.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/warehouse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/warehouse.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,8 +30,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/warehouse.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="47" />
+            <state relative-caret-position="294">
+              <caret line="21" column="72" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="72" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -47,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/items.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+            <state relative-caret-position="654">
+              <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -57,25 +52,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/firebase.js">
+        <entry file="file://$PROJECT_DIR$/src/utils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/signIn.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" column="16" lean-forward="true" selection-start-line="23" selection-start-column="16" selection-end-line="23" selection-end-column="16" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="70">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -105,8 +85,9 @@
         <option value="$PROJECT_DIR$/src/warehouse.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/signIn.js" />
-        <option value="$PROJECT_DIR$/src/warehouse.js" />
         <option value="$PROJECT_DIR$/src/firebase.js" />
+        <option value="$PROJECT_DIR$/src/utils.js" />
+        <option value="$PROJECT_DIR$/src/warehouse.js" />
         <option value="$PROJECT_DIR$/src/items.js" />
       </list>
     </option>
@@ -202,7 +183,7 @@
       <workItem from="1542967910969" duration="1772000" />
       <workItem from="1542969782152" duration="6259000" />
       <workItem from="1542979777130" duration="3873000" />
-      <workItem from="1543222647177" duration="37041000" />
+      <workItem from="1543222647177" duration="49255000" />
     </task>
     <task id="LOCAL-00001" summary="Use Ant Design and ReactJS.">
       <created>1543233339981</created>
@@ -211,23 +192,30 @@
       <option name="project" value="LOCAL" />
       <updated>1543233339981</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Retrieve and show items from Firebase.">
+      <created>1543480283736</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543480283736</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49886000" />
+    <option name="totallyTimeSpent" value="62100000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="28" width="1916" height="950" extended-state="6" />
+    <frame x="0" y="28" width="1916" height="956" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.68440145" visible="true" weight="0.13874066" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6842737" visible="true" weight="0.13874066" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.31559855" side_tool="true" visible="true" weight="0.13874066" />
+      <window_info id="npm" order="2" sideWeight="0.31572628" side_tool="true" visible="true" weight="0.13874066" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32889965" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" weight="0.31922612" />
+      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" weight="0.31812724" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -248,7 +236,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Use Ant Design and ReactJS." />
-    <option name="LAST_COMMIT_MESSAGE" value="Use Ant Design and ReactJS." />
+    <MESSAGE value="Retrieve and show items from Firebase." />
+    <option name="LAST_COMMIT_MESSAGE" value="Retrieve and show items from Firebase." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -304,16 +293,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/firebase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/signIn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
@@ -321,6 +300,23 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/firebase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" column="42" lean-forward="true" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -336,8 +332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/warehouse.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="14" column="47" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="47" />
+        <state relative-caret-position="294">
+          <caret line="21" column="72" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="72" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -346,8 +342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/items.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="39" column="1" lean-forward="true" selection-start-line="39" selection-start-column="1" selection-end-line="39" selection-end-column="1" />
+        <state relative-caret-position="654">
+          <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
