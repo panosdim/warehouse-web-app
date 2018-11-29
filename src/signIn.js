@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import firebase from './firebase';
+import { firebase, auth } from "./firebase";
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
 
@@ -22,9 +22,9 @@ const { Content } = Layout;
 class SignIn extends React.Component {
     render() {
         return (
-            <div className="center">
+            <div>
                 <Layout>
-                    <Content><StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()}/></Content>
+                    <Content><StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth}/></Content>
                 </Layout>
             </div>
         );

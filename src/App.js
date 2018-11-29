@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import firebase from './firebase'
+import { auth } from "./firebase";
 import SignIn from './signIn'
 import Warehouse from "./warehouse";
 
@@ -12,7 +12,7 @@ class App extends Component {
 
     // Listen to the Firebase Auth state and set the local state.
     componentDidMount() {
-        this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
+        this.unregisterAuthObserver = auth.onAuthStateChanged(
             (user) => this.setState({isSignedIn: !!user})
         );
     }
