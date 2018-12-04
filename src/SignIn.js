@@ -1,6 +1,6 @@
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { firebase, auth } from "./firebase";
+import { firebase, auth } from "./Firebase";
 import { Layout } from 'antd';
 import 'antd/dist/antd.css';
 

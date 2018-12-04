@@ -1,15 +1,17 @@
 import React from 'react';
-import {db, auth} from "./firebase";
-import {sortByDate} from "./utils";
+import {db, auth} from "./Firebase";
+import ItemDetails from "./ItemDetails";
 import {Card, Row, Col} from 'antd';
 import 'antd/dist/antd.css';
+import {sortByDate} from "./SortFunctions";
 
-class Items extends React.Component {
+class ItemCards extends React.Component {
     constructor(props) {
         super(props);
         this.currentUser = auth.currentUser;
         this.state = {
-            items: []
+            items: [],
+            show: false
         };
         this.itemsRef = null;
     }
@@ -25,14 +27,38 @@ class Items extends React.Component {
                 items: previousItems
             });
         });
+
+        this.itemsRef.on('child_changed', snap => {
+            let updatedItem = snap.val();
+            updatedItem.key = snap.key;
+            const updatedItems = this.state.items.map((item) => {
+                if (item.key === snap.key) return updatedItem;
+                return item;
+            });
+            this.setState({
+                items: updatedItems
+            });
+        });
+
+        this.itemsRef.on('child_removed', snap => {
+            const updatedItems = this.state.items.filter((item) => item.key !== snap.key);
+            this.setState({
+                items: updatedItems
+            });
+        });
     }
 
     componentWillUnmount() {
         this.itemsRef.off();
     }
 
-    itemDetails = (key) => {
-        console.log(key);
+    handleClose = () => {
+        this.setState({show: false});
+    };
+
+    itemDetails = (item) => {
+        this.setState({item: item});
+        this.setState({show: true});
     };
 
     render() {
@@ -76,7 +102,7 @@ class Items extends React.Component {
                     extra = "";
                 }
                 return <Card
-                    onClick={() => this.itemDetails(item.key)}
+                    onClick={() => this.itemDetails(item)}
                     key={item.key}
                     title={item.name}
                     extra={extra}
@@ -91,10 +117,11 @@ class Items extends React.Component {
         );
         return (
             <div style={divLayout}>
+                <ItemDetails show={this.state.show} handleClose={this.handleClose} item={this.state.item}/>
                 {listOfItems}
             </div>
         );
     }
 }
 
-export default Items;
+export default ItemCards;

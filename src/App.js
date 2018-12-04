@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
-import { auth } from "./firebase";
-import SignIn from './signIn'
-import Warehouse from "./warehouse";
+import { auth } from "./Firebase";
+import SignIn from './SignIn'
+import Warehouse from "./Warehouse";
 
 class App extends Component {
     // The component's Local state.
