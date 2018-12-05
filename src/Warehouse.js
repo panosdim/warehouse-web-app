@@ -33,7 +33,7 @@ class Warehouse extends React.Component {
         return (
             <div>
                 <Layout>
-                    <Header>
+                    <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
                         <Row>
                             <Col span={1}><img src={StockSvg} style={{height: "31px"}} alt="logo"/></Col>
                             <Col span={19}><h1 style={{color: "whitesmoke"}}>Warehouse</h1></Col>
@@ -43,7 +43,7 @@ class Warehouse extends React.Component {
                             <Col span={1}><Button onClick={this.signOut} type="danger" shape="circle" icon="logout" htmlType="button" /></Col>
                         </Row>
                     </Header>
-                    <Content>
+                    <Content style={{ padding: '0 50px', marginTop: 64 }}>
                         <ItemAdd show={this.state.show} handleClose={this.handleClose} />
                         <ItemCards />
                     </Content>
