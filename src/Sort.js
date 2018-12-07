@@ -87,7 +87,7 @@ class Sort extends React.Component {
             </div>
         );
         return (
-            <Popover content={content} title="Sort Items">
+            <Popover content={content} title="Sort Items" trigger="click">
                 <Button shape="circle" icon="ordered-list" htmlType="button"/>
             </Popover>
         );

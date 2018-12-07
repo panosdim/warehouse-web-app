@@ -29,7 +29,7 @@ const ItemAddForm = Form.create()(
                             {getFieldDecorator('name', {
                                 rules: [{required: true, message: 'Please input the name of the item!'}],
                             })(
-                                <Input/>
+                                <Input style={{textTransform: "uppercase"}}/>
                             )}
                         </FormItem>
                         <FormItem label="Expiration Date">
@@ -73,7 +73,7 @@ class ItemAdd extends React.Component {
             }
 
             const exp_date = values.exp_date ? values.exp_date.format("YYYY-MM-DD") : "";
-            const newItem = new Item(values.name, exp_date, values.amount.toString(), values.box.toString());
+            const newItem = new Item(values.name.toUpperCase(), exp_date, values.amount.toString(), values.box.toString());
             // Get a key for a new Item.
             const newItemRef = db.ref('/items/' + this.currentUser.uid).push();
 

@@ -39,7 +39,7 @@ const ItemDetailsForm = Form.create()(
                                 rules: [{required: true, message: 'Please input the name of the item!'}],
                                 initialValue: item.name
                             })(
-                                <Input/>
+                                <Input style={{textTransform: "uppercase"}}/>
                             )}
                         </FormItem>
                         <FormItem label="Expiration Date">
@@ -87,7 +87,7 @@ class ItemDetails extends React.Component {
             }
 
             const exp_date = values.exp_date ? values.exp_date.format("YYYY-MM-DD") : "";
-            const updatedItem = new Item(values.name, exp_date, values.amount.toString(), values.box.toString());
+            const updatedItem = new Item(values.name.toUpperCase(), exp_date, values.amount.toString(), values.box.toString());
             if (!updatedItem.isEqual(this.state.item)) {
                 const itemRef = db.ref('/items/' + this.currentUser.uid).child(this.state.item.key);
                 // Write the new Item data in the database.

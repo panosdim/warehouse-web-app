@@ -7,6 +7,7 @@ import ItemAdd from "./ItemAdd";
 import StockSvg from './stock.svg';
 import Sort from "./Sort";
 import {sortByDateAsc} from "./SortFunctions";
+import Search from "./Search";
 
 const {Header, Content} = Layout;
 
@@ -15,7 +16,8 @@ class Warehouse extends React.Component {
         super(props);
         this.state = {
             show: false,
-            sortBy: sortByDateAsc
+            sortBy: sortByDateAsc,
+            search: (item) => item
         };
     }
 
@@ -35,7 +37,14 @@ class Warehouse extends React.Component {
       this.setState({sortBy: sortFunction});
     };
 
-    // TODO: Add functionality for search
+    search = (searchTerm) => {
+        if (searchTerm) {
+            this.setState({search: (item) => item.name.includes(searchTerm)});
+        } else {
+            this.setState({search: (item) => item});
+        }
+    };
+
     render() {
         return (
             <div>
@@ -47,13 +56,13 @@ class Warehouse extends React.Component {
                             <Col span={19}><h1 style={{color: "whitesmoke"}}>Warehouse</h1></Col>
                             <Col span={1}><Button onClick={this.addNew} type="primary" shape="circle" icon="plus"  htmlType="button"/></Col>
                             <Col span={1}><Sort sortBy={this.sortBy}/></Col>
-                            <Col span={1}><Button shape="circle" icon="search"  htmlType="button"/></Col>
+                            <Col span={1}><Search search={this.search}/></Col>
                             <Col span={1}><Button onClick={this.signOut} type="danger" shape="circle" icon="logout" htmlType="button" /></Col>
                         </Row>
                     </Header>
                     <Content style={{ padding: '0 50px', marginTop: 64 }}>
                         <ItemAdd show={this.state.show} handleClose={this.handleClose} />
-                        <ItemCards sortBy={this.state.sortBy} />
+                        <ItemCards sortBy={this.state.sortBy} search={this.state.search}/>
                     </Content>
                 </Layout>
             </div>
