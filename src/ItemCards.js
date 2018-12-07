@@ -3,7 +3,6 @@ import {db, auth} from "./Firebase";
 import ItemDetails from "./ItemDetails";
 import {Card, Row, Col} from 'antd';
 import 'antd/dist/antd.css';
-import {sortByDate} from "./SortFunctions";
 
 class ItemCards extends React.Component {
     constructor(props) {
@@ -84,7 +83,7 @@ class ItemCards extends React.Component {
          * @property {string} name - The name of the item.
          * @property {string} key - The key of the item in Firebase Database.
          */
-        const listOfItems = this.state.items.sort(sortByDate).map(item => {
+        const listOfItems = this.state.items.sort(this.props.sortBy).map(item => {
                 let color = "#fff";
                 let extra = <span>Expiration Date: <span style={{fontWeight: 500}}>{item.exp_date}</span></span>;
                 if (item.exp_date) {
