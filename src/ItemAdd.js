@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Form, Input, DatePicker, InputNumber} from 'antd';
+import {Modal, Form, Input, DatePicker, InputNumber, message} from 'antd';
 import 'antd/dist/antd.css';
 import {auth, db} from "./Firebase";
 import Item from "./Item";
@@ -80,6 +80,8 @@ class ItemAdd extends React.Component {
             // Write the new Item data in the database.
             // noinspection JSIgnoredPromiseFromCall
             newItemRef.set(newItem);
+
+            message.success('Item added successfully');
 
             this.props.handleClose();
             form.resetFields();

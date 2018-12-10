@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, Form, Input, DatePicker, InputNumber} from 'antd';
+import {Modal, Form, Input, DatePicker, InputNumber, message} from 'antd';
 import 'antd/dist/antd.css';
 import moment from "moment";
 import {auth, db} from "./Firebase";
@@ -93,6 +93,8 @@ class ItemDetails extends React.Component {
                 // Write the new Item data in the database.
                 // noinspection JSIgnoredPromiseFromCall
                 itemRef.set(updatedItem);
+
+                message.success('Item edited successfully');
             }
             this.props.handleClose();
             form.resetFields();
@@ -106,6 +108,7 @@ class ItemDetails extends React.Component {
             // Write the new Item data in the database.
             // noinspection JSIgnoredPromiseFromCall
             itemRef.remove();
+            message.success('Item deleted successfully');
         }
         this.props.handleClose();
     };

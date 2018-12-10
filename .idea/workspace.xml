@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="79ce4a95-76f2-4ce0-870b-d6cd56e7cd61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ItemAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ItemCards.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemCards.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ItemDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ItemDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sort.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Warehouse.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Warehouse.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/src/Search.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="69" />
+              <caret line="12" column="69" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="69" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -78,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ItemAdd.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+            <state relative-caret-position="493">
+              <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="55" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -102,8 +98,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ItemDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+            <state relative-caret-position="340">
+              <caret line="104" column="27" lean-forward="true" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -293,7 +289,7 @@
       <workItem from="1544005129702" duration="1360000" />
       <workItem from="1544006868490" duration="709000" />
       <workItem from="1544007604817" duration="136000" />
-      <workItem from="1544178087792" duration="11800000" />
+      <workItem from="1544178087792" duration="13122000" />
     </task>
     <task id="LOCAL-00001" summary="Use Ant Design and ReactJS.">
       <created>1543233339981</created>
@@ -323,11 +319,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544189159513</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Search functionality.">
+      <created>1544192858129</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1544192858129</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116401000" />
+    <option name="totallyTimeSpent" value="117723000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -342,13 +345,13 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6749729" visible="true" weight="0.13859275" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.67460316" visible="true" weight="0.13859275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" sideWeight="0.32502708" side_tool="true" visible="true" weight="0.13859275" />
+      <window_info id="npm" order="2" sideWeight="0.32539684" side_tool="true" visible="true" weight="0.13859275" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32719395" />
-      <window_info anchor="bottom" auto_hide="true" id="Run" order="2" weight="0.31744313" />
+      <window_info active="true" anchor="bottom" auto_hide="true" id="Run" order="2" visible="true" weight="0.31744313" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -372,7 +375,8 @@
     <MESSAGE value="Retrieve and show items from Firebase." />
     <MESSAGE value="Show Items as Cards in Flex div." />
     <MESSAGE value="Added sort functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sort functionality." />
+    <MESSAGE value="Added Search functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Search functionality." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.gitignore">
@@ -480,16 +484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Warehouse.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Item.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -517,10 +511,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Warehouse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="69" lean-forward="true" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="69" />
+          <caret line="12" column="69" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="69" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -529,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ItemAdd.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="75" column="62" selection-start-line="75" selection-start-column="62" selection-end-line="75" selection-end-column="62" />
+        <state relative-caret-position="493">
+          <caret line="83" column="55" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -539,8 +543,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ItemDetails.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="84" column="22" lean-forward="true" selection-start-line="84" selection-start-column="22" selection-end-line="84" selection-end-column="22" />
+        <state relative-caret-position="340">
+          <caret line="104" column="27" lean-forward="true" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
