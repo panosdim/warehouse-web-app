@@ -49,10 +49,6 @@ class ItemCards extends React.Component {
         });
     }
 
-    componentWillUnmount() {
-        this.itemsRef.off();
-    }
-
     handleClose = () => {
         this.setState({show: false});
     };

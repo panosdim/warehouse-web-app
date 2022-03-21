@@ -79,7 +79,7 @@ class ItemDetails extends React.Component {
         this.db = getDatabase(firebase);
     }
 
-    componentWillReceiveProps(props) {
+    UNSAFE_componentWillReceiveProps(props) {
         this.setState({item: props.item});
     }
 
