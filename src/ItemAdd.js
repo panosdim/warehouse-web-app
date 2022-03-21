@@ -1,7 +1,11 @@
-import React from 'react';
-import {Modal, Form, Input, DatePicker, InputNumber, message} from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { DatePicker, Input, InputNumber, message, Modal } from 'antd';
 import 'antd/dist/antd.css';
-import {auth, db} from "./Firebase";
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref } from "firebase/database";
+import React from 'react';
+import { firebase } from "./Firebase";
 import Item from "./Item";
 
 const FormItem = Form.Item;
@@ -61,7 +65,8 @@ const ItemAddForm = Form.create()(
 class ItemAdd extends React.Component {
     constructor(props) {
         super(props);
-        this.currentUser = auth.currentUser;
+        this.currentUser = getAuth(firebase).currentUser;
+        this.db = getDatabase(firebase)
     }
 
     handleOk = (e) => {
@@ -75,7 +80,7 @@ class ItemAdd extends React.Component {
             const exp_date = values.exp_date ? values.exp_date.format("YYYY-MM-DD") : "";
             const newItem = new Item(values.name.toUpperCase(), exp_date, values.amount.toString(), values.box.toString());
             // Get a key for a new Item.
-            const newItemRef = db.ref('/items/' + this.currentUser.uid).push();
+            const newItemRef = ref(this.db, '/items/' + this.currentUser.uid).push();
 
             // Write the new Item data in the database.
             // noinspection JSIgnoredPromiseFromCall

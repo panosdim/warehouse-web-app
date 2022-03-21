@@ -1,8 +1,12 @@
-import React from 'react';
-import {Modal, Form, Input, DatePicker, InputNumber, message} from 'antd';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { DatePicker, Input, InputNumber, message, Modal } from 'antd';
 import 'antd/dist/antd.css';
+import { getAuth } from 'firebase/auth';
+import { getDatabase, ref } from "firebase/database";
 import moment from "moment";
-import {auth, db} from "./Firebase";
+import React from 'react';
+import { firebase } from "./Firebase";
 import Item from "./Item";
 
 const FormItem = Form.Item;
@@ -71,7 +75,8 @@ const ItemDetailsForm = Form.create()(
 class ItemDetails extends React.Component {
     constructor(props) {
         super(props);
-        this.currentUser = auth.currentUser;
+        this.currentUser = getAuth(firebase).currentUser;
+        this.db = getDatabase(firebase);
     }
 
     componentWillReceiveProps(props) {
@@ -89,7 +94,7 @@ class ItemDetails extends React.Component {
             const exp_date = values.exp_date ? values.exp_date.format("YYYY-MM-DD") : "";
             const updatedItem = new Item(values.name.toUpperCase(), exp_date, values.amount.toString(), values.box.toString());
             if (!updatedItem.isEqual(this.state.item)) {
-                const itemRef = db.ref('/items/' + this.currentUser.uid).child(this.state.item.key);
+                const itemRef = ref(this.db, '/items/' + this.currentUser.uid).child(this.state.item.key);
                 // Write the new Item data in the database.
                 // noinspection JSIgnoredPromiseFromCall
                 itemRef.set(updatedItem);
@@ -104,7 +109,7 @@ class ItemDetails extends React.Component {
     handleCancel = (e) => {
         e.preventDefault();
         if (e.target.type === "button") {
-            const itemRef = db.ref('/items/' + this.currentUser.uid).child(this.state.item.key);
+            const itemRef = ref(this.db, '/items/' + this.currentUser.uid).child(this.state.item.key);
             // Write the new Item data in the database.
             // noinspection JSIgnoredPromiseFromCall
             itemRef.remove();

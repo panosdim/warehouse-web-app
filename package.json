@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/compatible": "^1.1.0",
     "antd": "^4.19.2",
     "firebase": "^9.6.9",
     "moment": "^2.29.1",

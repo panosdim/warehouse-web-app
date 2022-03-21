@@ -4,6 +4,7 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import React from 'react';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { auth } from './Firebase';
 
 // Configure FirebaseUI.
 const uiConfig = {
@@ -25,7 +26,7 @@ class SignIn extends React.Component {
         return (
             <div>
                 <Layout>
-                    <Content><StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} /></Content>
+                    <Content><StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} /></Content>
                 </Layout>
             </div>
         );

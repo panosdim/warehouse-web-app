@@ -1,3 +1,4 @@
+import { OrderedListOutlined } from '@ant-design/icons';
 import {Popover, Button, Radio} from "antd";
 import React from "react";
 import 'antd/dist/antd.css';
@@ -88,7 +89,7 @@ class Sort extends React.Component {
         );
         return (
             <Popover content={content} title="Sort Items" trigger="click">
-                <Button shape="circle" icon="ordered-list" htmlType="button"/>
+                <Button shape="circle" icon={<OrderedListOutlined />} htmlType="button"/>
             </Popover>
         );
     }

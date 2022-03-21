@@ -1,13 +1,15 @@
-import React from 'react';
-import { auth } from "./Firebase";
-import {Layout, Button, Row, Col, BackTop } from 'antd';
+import { LogoutOutlined, PlusOutlined } from '@ant-design/icons';
+import { BackTop, Button, Col, Layout, Row } from 'antd';
 import 'antd/dist/antd.css';
-import ItemCards from "./ItemCards"
+import { getAuth } from 'firebase/auth';
+import React from 'react';
+import { firebase } from "./Firebase";
 import ItemAdd from "./ItemAdd";
-import StockSvg from './stock.svg';
-import Sort from "./Sort";
-import {sortByDateAsc} from "./SortFunctions";
+import ItemCards from "./ItemCards";
 import Search from "./Search";
+import Sort from "./Sort";
+import { sortByDateAsc } from "./SortFunctions";
+import StockSvg from './stock.svg';
 
 const {Header, Content} = Layout;
 
@@ -22,7 +24,7 @@ class Warehouse extends React.Component {
     }
 
     signOut = () => {
-        auth.signOut();
+        getAuth(firebase).signOut();
     };
 
     addNew = () => {
@@ -54,10 +56,10 @@ class Warehouse extends React.Component {
                         <Row>
                             <Col span={1}><img src={StockSvg} style={{height: "31px"}} alt="logo"/></Col>
                             <Col span={19}><h1 style={{color: "whitesmoke"}}>Warehouse</h1></Col>
-                            <Col span={1}><Button onClick={this.addNew} type="primary" shape="circle" icon="plus"  htmlType="button"/></Col>
+                            <Col span={1}><Button onClick={this.addNew} type="primary" shape="circle" icon={<PlusOutlined />} htmlType="button" /></Col>
                             <Col span={1}><Sort sortBy={this.sortBy}/></Col>
                             <Col span={1}><Search search={this.search}/></Col>
-                            <Col span={1}><Button onClick={this.signOut} type="danger" shape="circle" icon="logout" htmlType="button" /></Col>
+                            <Col span={1}><Button onClick={this.signOut} type="danger" shape="circle" icon={<LogoutOutlined />} htmlType="button" /></Col>
                         </Row>
                     </Header>
                     <Content style={{ padding: '0 50px', marginTop: 64 }}>

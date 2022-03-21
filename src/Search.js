@@ -1,3 +1,4 @@
+import { SearchOutlined } from '@ant-design/icons';
 import {Popover, Button, Input} from "antd";
 import React from "react";
 import 'antd/dist/antd.css';
@@ -15,7 +16,7 @@ class Search extends React.Component {
         );
         return (
             <Popover content={content} title="Search" trigger="click">
-                <Button shape="circle" icon="search"  htmlType="button"/>
+                <Button shape="circle" icon={<SearchOutlined />}  htmlType="button"/>
             </Popover>
         );
     }

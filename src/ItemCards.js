@@ -1,8 +1,10 @@
-import React from 'react';
-import {db, auth} from "./Firebase";
-import ItemDetails from "./ItemDetails";
-import {Card, Row, Col} from 'antd';
+import { Card, Col, Row } from 'antd';
 import 'antd/dist/antd.css';
+import { onChildAdded, onChildChanged, onChildRemoved, orderByChild, query, ref } from "firebase/database";
+import React from 'react';
+import { auth, db } from "./Firebase";
+import ItemDetails from "./ItemDetails";
+
 
 class ItemCards extends React.Component {
     constructor(props) {
@@ -16,8 +18,8 @@ class ItemCards extends React.Component {
     }
 
     componentDidMount() {
-        this.itemsRef = db.ref('/items/' + this.currentUser.uid).orderByChild("exp_date");
-        this.itemsRef.on('child_added', snap => {
+        this.itemsRef = query(ref(db, '/items/' + this.currentUser.uid), orderByChild("exp_date"));
+        onChildAdded(this.itemsRef, snap => {
             let item = snap.val();
             item.key = snap.key;
             const previousItems = this.state.items;
@@ -27,7 +29,7 @@ class ItemCards extends React.Component {
             });
         });
 
-        this.itemsRef.on('child_changed', snap => {
+        onChildChanged(this.itemsRef, snap => {
             let updatedItem = snap.val();
             updatedItem.key = snap.key;
             const updatedItems = this.state.items.map((item) => {
@@ -39,7 +41,7 @@ class ItemCards extends React.Component {
             });
         });
 
-        this.itemsRef.on('child_removed', snap => {
+        onChildRemoved(this.itemsRef, snap => {
             const updatedItems = this.state.items.filter((item) => item.key !== snap.key);
             this.setState({
                 items: updatedItems
