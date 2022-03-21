@@ -13,7 +13,7 @@ Keep track of your stock.
 In order to build the project you need [IntelliJ IDEA](https://www.jetbrains.com/idea/).
 Clone the repository and open the project with IntelliJ.
 
-Then in `clics -> src` folder copy the `.env.example` file to `.env` and replace with the appropriate values from 
+Then copy the `.env.example` file to `.env` and replace with the appropriate values from
 your firebase project.
 
 Then you can run the project with `npm start` or build with `npm build`.

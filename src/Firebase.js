@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
 const config = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -11,11 +11,11 @@ const config = {
     messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(config);
-}
+const firebase = initializeApp(config);
 
-const auth = firebase.auth();
-const db = firebase.database();
+
+const auth = getAuth(firebase);
+const db = getDatabase(firebase);
 
 export { firebase, auth, db };
+
